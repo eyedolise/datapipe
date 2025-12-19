@@ -1,7 +1,7 @@
 
-DataPipe Platform Suite
+DataPipe Agency Pro 
 
-Turnkey Data Pipeline Solutions for Every Business Need
+Data Pipeline Solutions for Every Business Need
 
 🎯 Overview
 
