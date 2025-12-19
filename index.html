@@ -1,0 +1,762 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataPipe Agency Pro - The Complete Data Pipeline Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --dark-bg: #0f172a;
+            --darker-bg: #020617;
+            --card-bg: #1e293b;
+            --section-bg: #1a2435;
+            --text-light: #e2e8f0;
+            --text-lighter: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+        }
+        
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--text-lighter), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Benefits Section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-lighter);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            font-size: 1.1rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .benefit-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-lighter);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: var(--section-bg);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: "❝";
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+        
+        .testimonial-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .author-info h4 {
+            color: var(--text-lighter);
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+        
+        .pricing-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pricing-body {
+            padding: 2rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-lighter);
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .features li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: var(--success);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--text-lighter);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            nav a {
+                margin: 0;
+            }
+            
+            .hero-stats {
+                gap: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+
+    <header>
+ 
+
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-stream"></i>
+                DataPipe Agency Pro
+            </div>
+            <nav>
+                <a href="#benefits">Benefits</a>
+                <a href="#testimonials">Case Studies</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </nav>
+           
+        </div>
+    </header>
+   </br>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Transform Your Agency Into a Data Services Powerhouse</h1>
+            <p class="hero-subtitle">
+                DataPipe Agency Pro isn't just software—it's a complete revenue stream. 
+                Deploy enterprise-grade data pipelines for any client in under 48 hours 
+                and turn data chaos into predictable recurring revenue.
+            </p>
+            <a href="#pricing" class="cta-button">Launch Your Data Services Division →</a>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">$12K</span>
+                    <span class="stat-label">Average Monthly Revenue Per Agency</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">48h</span>
+                    <span class="stat-label">Client Onboarding Time</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">85%</span>
+                    <span class="stat-label">Gross Margin</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">40+</span>
+                    <span class="stat-label">Pre-built Connectors</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Top Agencies Choose DataPipe Pro</h2>
+            <p class="section-subtitle">
+                Stop building custom solutions from scratch. Start deploying standardized, 
+                high-margin data services that scale across your entire client portfolio.
+            </p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Instant Revenue Stream</h3>
+                    <p>Charge $500-$2,000/month per client for automated data pipelines. 
+                       Our agencies typically add $8K-$15K in monthly recurring revenue within 90 days.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>95% Time Reduction</h3>
+                    <p>What used to take 40+ hours of custom development now takes 2 hours. 
+                       Deploy Shopify-to-Google Sheets, Facebook Ads-to-Data Warehouse, 
+                       or any of 50+ pre-built pipelines instantly.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>White-Label Platform</h3>
+                    <p>Your branding, your domain, your client portal. 
+                       Clients never know they're using our platform—they think 
+                       you built them a custom enterprise solution.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Enterprise-Grade Security</h3>
+                    <p>Each client gets fully isolated databases. SOC 2 compliant infrastructure, 
+                       encrypted credentials, and audit logs built-in. Safe for Fortune 500 clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Agency Success Stories</h2>
+            <p class="section-subtitle">
+                Hear from agencies who transformed their business with DataPipe Pro
+            </p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "We added $12,000/month in recurring revenue within 90 days of implementing 
+                        DataPipe Pro. Our margins went from 30% on custom dev work to 85% on pipeline services. 
+                        This isn't just software—it's a business model transformation."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MC</div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>CEO, GrowthStack Digital</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "From zero to $8K MRR in 60 days. We onboarded 7 clients in two months, 
+                        each paying $1,200/month for automated reporting pipelines. 
+                        The ROI was immediate and transformative for our agency."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SR</div>
+                        <div class="author-info">
+                            <h4>Sarah Rodriguez</h4>
+                            <p>Managing Partner, NextGen Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Tripled our data services revenue in one quarter. 
+                        We went from struggling with one-off data projects to offering 
+                        standardized, high-margin services. The white-label portal makes 
+                        us look like enterprise software experts to our clients."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JK</div>
+                        <div class="author-info">
+                            <h4>James Kim</h4>
+                            <p>Director, OmniChannel Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The multi-tenant architecture changed everything. 
+                        We manage 23 client pipelines from one dashboard, 
+                        with full isolation between clients. Setup takes minutes, 
+                        billing is automated, and our clients think we built them custom solutions."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AT</div>
+                        <div class="author-info">
+                            <h4>Alex Thompson</h4>
+                            <p>CTO, DataDriven Agencies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Growth Path</h2>
+            <p class="section-subtitle">
+                One-time license fee for complete source code. No royalties, no recurring fees.
+            </p>
+            
+            <div class="pricing-grid">
+                <!-- Lite Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>DataFlow Lite</h3>
+                        <p>For Individual Businesses</p>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">$2,499</div>
+                        <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem;">
+                            Complete script solution
+                        </p>
+                        <ul class="features">
+                            <li>5 Essential Connectors</li>
+                            <li>Basic ETL Pipeline</li>
+                            <li>Local CSV/JSON Output</li>
+                            <li>Manual Execution</li>
+                            <li>Single User</li>
+                        
+                        </ul>
+                        <a href="https://ko-fi.com/s/615f256ca1" class="cta-button" style="width: 100%; text-align: center; display: block;">
+                            Purchase Lite Edition
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Pro Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>DataFlow Pro</h3>
+                        <p>For Internal Teams</p>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">$9,999</div>
+                        <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem;">
+                            Complete web application
+                        </p>
+                        <ul class="features">
+                            <li>20+ Enterprise Connectors</li>
+                            <li>Web Dashboard & UI</li>
+                            <li>Team Collaboration</li>
+                            <li>Advanced Scheduling</li>
+                            <li>Real-time Monitoring</li>
+                       
+                        </ul>
+                        <a href="https://ko-fi.com/s/a464b6e7a2" class="cta-button" style="width: 100%; text-align: center; display: block;">
+                            Purchase Pro Edition
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Agency Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>DataPipe Agency Pro</h3>
+                        <p>For Agency Reselling</p>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">$34,999</div>
+                        <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem;">
+                            Complete multi-tenant platform
+                        </p>
+                        <ul class="features">
+                            <li>White-Label Client Portals</li>
+                            <li>Multi-Tenant Architecture</li>
+                            <li>Automated Client Billing</li>
+                            <li>Isolated Client Databases</li>
+                            <li>Agency Management Dashboard</li>
+                            <li>Dedicated Onboarding</li>                       
+                        </ul>
+                        <a href="https://ko-fi.com/s/5626699468" class="cta-button" style="width: 100%; text-align: center; display: block; background: linear-gradient(90deg, var(--accent), var(--secondary));">
+                            Launch Your Data Services Business
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem; padding: 2rem; background: rgba(37, 99, 235, 0.1); border-radius: 12px;">
+                <h3 style="color: var(--text-lighter); margin-bottom: 1rem;">Need a Custom Quote for Multiple Licenses?</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Agencies purchasing 3+ licenses receive volume discounts and extended payment terms.
+                </p>
+                <a href="mailto:sales@datapipepro.com" class="cta-button" style="display: inline-block;">
+                    <i class="fas fa-envelope"></i> Contact Enterprise Sales
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DataPipe Agency Pro</h3>
+                    <p>The complete platform for agencies to launch and scale data pipeline services. 
+                       Transform your service offerings and unlock new revenue streams.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> nlcgpt1@gmail.com</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> (868) 278-0240</p>
+                    <p><i class="fas fa-clock" style="margin-right: 10px;"></i> 9AM-5PM EST, Mon-Fri</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Technical Details</h3>
+                    <p>• Built with FastAPI & React</p>
+                    <p>• PostgreSQL & Redis</p>
+                    <p>• Docker & Kubernetes Ready</p>
+                    <p>• Complete Source Code Included</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 DataPipe Agency Pro. All rights reserved. 
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
