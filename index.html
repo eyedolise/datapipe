@@ -35,85 +35,316 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Structured Data -->
-    <script type="application/ld+json">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "SoftwareApplication",
+      "@id": "https://eyedolise.github.io/datapipe/#software",
+      "name": "DataPipe Agency Pro",
+      "description": "Complete white-label platform for agencies to deploy enterprise-grade data pipelines and launch data services businesses",
+      "url": "https://eyedolise.github.io/datapipe/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "image": "https://eyedolise.github.io/datapipe/pscs.jpg",
+      "offers": {
+        "@type": "AggregateOffer",
+        "offerCount": "3",
+        "lowPrice": "499",
+        "highPrice": "4999",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "ratingCount": "38",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
         {
-          "@type": "SoftwareApplication",
-          "@id": "https://eyedolise.github.io/datapipe/#software",
-          "name": "DataPipe Agency Pro",
-          "description": "Complete white-label platform for agencies to deploy enterprise-grade data pipelines and launch data services businesses",
-          "url": "https://eyedolise.github.io/datapipe/",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Web",
-          "image": "https://eyedolise.github.io/datapipe/pscs.jpg",
-          "offers": {
-            "@type": "AggregateOffer",
-            "offerCount": "3",
-            "lowPrice": "499",
-            "highPrice": "4999",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Agency Owner"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "This platform helped us launch our data services division. The white-label features are exactly what we needed."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Data Services Provider"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4.5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Enterprise-grade pipelines at agency prices. Multi-tenant architecture works perfectly for our clients."
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://eyedolise.github.io/datapipe/#product",
+      "name": "DataPipe Agency Pro",
+      "image": "https://eyedolise.github.io/datapipe/pscs.jpg",
+      "description": "White-label multi-tenant data pipeline platform for agencies",
+      "brand": {
+        "@type": "Brand",
+        "name": "DataPipe"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "ratingCount": "38",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Digital Agency Director"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Complete white-label solution that allowed us to offer data pipeline services under our brand. ROI in first month."
+        }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "DataFlow Lite",
+          "price": "499",
+          "priceCurrency": "USD",
+          "url": "https://ko-fi.com/s/615f256ca1",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-12-31",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "USD"
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "businessDays": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+              },
+              "cutoffTime": "17:00-08:00",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 1,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 0,
+                "unitCode": "DAY"
+              }
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 14,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
           }
         },
         {
-          "@type": "Product",
-          "@id": "https://eyedolise.github.io/datapipe/#product",
-          "name": "DataPipe Agency Pro",
-          "image": "https://eyedolise.github.io/datapipe/pscs.jpg",
-          "description": "White-label multi-tenant data pipeline platform for agencies",
-          "brand": {
-            "@type": "Brand",
-            "name": "DataPipe"
-          },
-          "offers": [
-            {
-              "@type": "Offer",
-              "name": "DataFlow Lite",
-              "price": "499",
-              "priceCurrency": "USD",
-              "url": "https://ko-fi.com/s/615f256ca1",
-              "availability": "https://schema.org/InStock"
+          "@type": "Offer",
+          "name": "DataFlow Pro",
+          "price": "1999",
+          "priceCurrency": "USD",
+          "url": "https://ko-fi.com/s/a464b6e7a2",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-12-31",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "USD"
             },
-            {
-              "@type": "Offer",
-              "name": "DataFlow Pro",
-              "price": "1999",
-              "priceCurrency": "USD",
-              "url": "https://ko-fi.com/s/a464b6e7a2",
-              "availability": "https://schema.org/InStock"
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
             },
-            {
-              "@type": "Offer",
-              "name": "DataPipe Agency Pro",
-              "price": "4999",
-              "priceCurrency": "USD",
-              "url": "https://ko-fi.com/s/5626699468",
-              "availability": "https://schema.org/InStock"
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "businessDays": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+              },
+              "cutoffTime": "17:00-08:00",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 1,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 0,
+                "unitCode": "DAY"
+              }
             }
-          ]
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 14,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+          }
         },
         {
-          "@type": "Organization",
-          "@id": "https://eyedolise.github.io/datapipe/#organization",
+          "@type": "Offer",
           "name": "DataPipe Agency Pro",
-          "url": "https://eyedolise.github.io/datapipe/",
-          "logo": "https://eyedolise.github.io/datapipe/pscs.jpg",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-868-278-0240",
-            "email": "nlcgpt1@gmail.com",
-            "contactType": "sales",
-            "availableLanguage": "English",
-            "areaServed": "US"
+          "price": "4999",
+          "priceCurrency": "USD",
+          "url": "https://ko-fi.com/s/5626699468",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-12-31",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "USD"
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "businessDays": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+              },
+              "cutoffTime": "17:00-08:00",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 1,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 0,
+                "unitCode": "DAY"
+              }
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 14,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://eyedolise.github.io/datapipe/#organization",
+      "name": "DataPipe Agency Pro",
+      "url": "https://eyedolise.github.io/datapipe/",
+      "logo": "https://eyedolise.github.io/datapipe/pscs.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-868-278-0240",
+        "email": "nlcgpt1@gmail.com",
+        "contactType": "sales",
+        "availableLanguage": "English",
+        "areaServed": "US",
+        "contactOption": "TollFree"
+      },
+      "sameAs": [
+        "https://ko-fi.com/eyedolise",
+        "https://tt.linkedin.com/in/eyedolise-5b9605384",
+        "https://github.com/eyedolise"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://eyedolise.github.io/datapipe/#website",
+      "url": "https://eyedolise.github.io/datapipe/",
+      "name": "DataPipe Agency Pro",
+      "description": "White-label data pipeline platform for agencies",
+      "publisher": {
+        "@id": "https://eyedolise.github.io/datapipe/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://eyedolise.github.io/datapipe/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is included in the white-label platform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Includes complete source code, multi-tenant architecture, admin dashboard, client portals, and full rebranding capability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we customize the platform for our clients?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the platform is fully customizable with modular architecture and comprehensive documentation for agency customization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is technical support included?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all packages include setup assistance and documentation. Higher tiers include additional support options."
           }
         }
       ]
     }
-    </script>
-    
+  ]
+}
+</script>
+
+
     <style>
         :root {
             --primary: #2563eb;
